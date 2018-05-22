@@ -7,7 +7,7 @@ class Generator extends BaseGenerator {
     var prompts = [{
       name: 'moduleName',
       message: 'What module name would you like to use?',
-      default: `${this.scriptAppName}.${this.name}`,
+      default: `${this.name}Module`,
       when: () => this.config.get('modulePrompt')
     }, {
       name: 'dir',
@@ -33,11 +33,11 @@ class Generator extends BaseGenerator {
   }
 
   end() {
-    this.log(`
-In the parent of this component, you should now import this component and add it as a dependency:
-    import ${this.classedName}Component from './${this.name}/${this.name}.component';
-    ...
-    export angular.module('myParentModule', [${this.classedName}Component]);`);
+//     this.log(`
+// In the parent of this component, you should now import this component and add it as a dependency:
+//     import ${this.classedName}Component from './${this.name}/${this.name}.component';
+//     ...
+//     export angular.module('myParentModule', [${this.classedName}Component]);`);
   }
 }
 
