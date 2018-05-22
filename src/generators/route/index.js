@@ -1,13 +1,10 @@
 import path from 'path';
 import {Base} from 'yeoman-generator';
+import {BaseGenerator} from '../base';
 import {relativeUrl, copyTemplates} from '../util';
 import scriptBase from '../script-base.js';
 
-class Generator extends Base {
-  initializing() {
-    return scriptBase.call(this);
-  }
-
+class Generator extends BaseGenerator {
   prompting() {
     var prompts = [{
       name: 'moduleName',
